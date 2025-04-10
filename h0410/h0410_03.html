@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표만들기</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        table{margin: 50px auto; text-align: center;
+             border-collapse: collapse; border-top:1px solid black; }
+        th,td{border-bottom:1px solid #ddd;}
+        th{height: 48px; font-size: 18px; font-weight: 700; color: #000; background-color: #F7F7F7;}
+        td{height: 65px; font-size: 16px; color: #666;}
+        .t2{border-left: 1px solid #ddd; border-right: 1px solid #ddd;}
+        /*strong{color: #004788;}*/
+        .td2{color: #004788; font-weight: 700;}
+    </style>
+</head> 
+<body>
+    <table>
+        <!-- 테이블의 넓이를 지정 -->
+        <colgroup>
+            <col width = "190px">
+            <col width = "300px">
+            <col width = "300px">
+        </colgroup>
+        <tr>
+            <th>구분</td>
+            <th class ="t2">등급</th>
+            <th>비고</th>
+        </tr>
+        <tr>
+            <td>종합평가</td>
+            <!-- <td class ="t2"><strong>AA</strong></td> -->
+            <td class = "t2 td2">AA</td>
+            <td>섹터별 ESG 성과 우수기업, <br>자산규모 기준 ESG 성과 우수 기업</td>
+        </tr>
+    </table>
+</body>
+</html>
