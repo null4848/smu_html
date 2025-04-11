@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Single+Day&display=swap');
+
+        *{margin: 0; padding: 0;}
+        table{margin: 20px auto; border-collapse: collapse; }
+        td,th{padding: 4px 20px; color: #333;}
+        th{height: 32px; background-color: #E4F4FF; 
+            border: 1px solid #D9D9D9; border-top: 1px solid black;
+        font-size: 16px;
+        font-family: "Noto Sans KR", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        }
+        td{height: 29px; border: 1px solid #D9D9D9; font-size: 14px;
+            font-family: "Noto Sans KR", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+        }
+        .unit{text-align: center;}
+        .num{text-align: right;}
+    </style>
+</head>
+<body>
+    <table>
+        <colgroup>
+            <col width="160px">
+            <col width="250px">
+            <col width="160px">
+            <col width="110px">
+            <col width="110px">
+            <col width="110px">        
+        </colgroup>
+        <thead>
+            <tr>
+                <th colspan="2">구분</th>
+                <th>단위</th>
+                <th>2021</th>
+                <th>2022</th>
+                <th>2023</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>투자자</td>
+                <td>배당금</td>
+                <td class="unit" rowspan="9">백만원</td>
+                <td class="num">4,262</td>
+                <td class="num">5,594</td>
+                <td class="num">44,068</td>
+            </tr>
+            <tr>
+                <td rowspan="2">임직원</td>
+                <td>인건비</td>
+                <td class="num">147,850</td>
+                <td class="num">177,467</td>
+                <td class="num">203,252</td>
+            </tr>
+            <tr>
+                <td>복리후생비</td>
+                <td class="num">20,516</td>
+                <td class="num">25,240</td>
+                <td class="num">32,077</td>
+            </tr>
+            <tr>
+                <td rowspan="2">협력사</td>
+                <td>외주비</td>
+                <td class="num">14,048</td>
+                <td class="num">35,195</td>
+                <td class="num">29,713</td>
+            </tr>
+            <tr>
+                <td>용역비</td>
+                <td class="num">37,925</td>
+                <td class="num">50,737</td>
+                <td class="num">30,381</td>
+            </tr>
+            <tr>
+                <td>국가</td>
+                <td>법인세</td>
+                <td class="num">4,832</td>
+                <td class="num">2,390</td>
+                <td class="num">33,736</td>
+            </tr>
+            <tr>
+                <td>채권자</td>
+                <td>이자비용</td>
+                <td class="num">1,076</td>
+                <td class="num">2,390</td>
+                <td class="num">3,736</td>
+            </tr>
+            <tr>
+                <td>지역사회</td>
+                <td>사회공헌 및 기부금</td>
+                <td class="num">1,151</td>
+                <td class="num">1,455</td>
+                <td class="num">1,430</td>
+            </tr>
+        </tbody>
+    </table>
+    
+</body>
+</html>
