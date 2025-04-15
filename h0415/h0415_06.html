@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding: 0; margin: 0;}
+        div{/*border: 2px solid black;*/
+            border-width: 5px 10px 20px 30px;
+            border-style: solid;
+            border-color: black;
+            width: 200px; height: 100px;
+            margin: 50px auto;}
+
+        #d02{border-width: 5px 10px 20px; /* top, right-left, bottom */
+            border-style: solid;
+            border-color: black;
+        }
+        #d03{border-width: 5px 10px; /* top-bottom, right-left */
+            border-style: solid;
+            border-color: black;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="d01">1</div>
+    <hr>
+    <div id="d02">1</div>
+    <hr>
+    <div id="d03">1</div>
+</body>
+</html>

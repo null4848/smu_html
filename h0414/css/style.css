@@ -1,0 +1,12 @@
+h1{text-align: center; color: #03c75a; height: 168px; padding: 62px;
+   font-size: 70px; font-weight: 900; }
+section{width: 460px; margin: 0 auto;}
+/* form 부분 */
+#id, #pw{width: 460px; height: 51px; box-sizing: border-box;
+         padding: 10px 35px 10px 15px; font-size: 15px;
+         border: 1px solid #dadada;}
+#id{margin-bottom: 14px;}
+#pw{margin-bottom: 30px;}
+/* 버튼부분 */
+#loginBtn{width: 464px; height: 61px; background-color: #03c75a; 
+          border: none; font-size: 20px; font-weight: 700; color: white;}
