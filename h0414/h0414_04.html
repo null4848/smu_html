@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="main.html" method="get" name="frms">
+        <label>아이디</label>
+        <input type="text" name="id"><br>
+        <!-- select : 여러개 중 1개 선택, selected : 우선순위 선택 -->
+        <select name="major">
+            <option value="archi">건축공학과</option>
+            <option value="mechanin">기계공학과</option>
+            <option value="indust">산업공학과</option>
+            <option value="elec">전자공학과</option>
+            <option value="computer" selected>컴퓨터공학과</option>
+        </select>
+        <br>
+
+        <!-- cols : 행(옆으로) - 40글자, row : 열(아래로) - 4줄 -->
+        <textarea name="memo" cols="40" rows="4"></textarea>
+        <br>
+        <input type="submit" value="전송">
+        <!-- button 태그 속성 submit이라고 하면 이동이 됨 type=button -->
+        <button type="button" onclick="move()">전송2</button>
+        <script>
+            function move(){
+                alert("이동을 하지 않습니다.")
+            }
+        </script>
+    </form>
+</body>
+</html>
