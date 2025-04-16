@@ -1,0 +1,69 @@
+<!-- absolute -> 기준이 부모 부모가 위치가 없을때는 부모의 부모를 기준으로 잡음 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+        *{margin: 0; padding: 0; font-size: 20px;}
+        ul{color: red;}
+        a[target='_blank']{font-size: 30px;}
+        /*input[type='radio']{}*/
+    </style>
+</head>
+<body>
+    <form>
+        <label>아이디</label>
+        <input type="text" name="id"><br>
+        <label>성별</label><br>
+        <label for="male">남자</label>
+        <input type="radio" name="gender" id="male" value="남자">
+        <label for="male">여자</label>
+        <input type="radio" name="gender" id="female" value="여자">
+        <label>취미</label><br>
+        <label for="golf">골프</label>
+        <input type="checkbox" name="hobby" id="golf" value="골프">
+        <label for="swim">수영</label>
+        <input type="checkbox" name="hobby" id="swim" value="수영">
+        <label for="run">조깅</label>
+        <input type="checkbox" name="hobby" id="run" value="조깅">
+        <br>
+        <button type="button" onclick="fbtn()">확인</button>
+        <script>
+            function fbtn(){
+                console.log("체크박스 개수: ", $("input[type='checkbox']").length);
+                console.log("체크된 개수 : ",$("input[type='checkbox']:checked").length);
+                }
+
+        </script>
+
+    </form>
+
+
+
+
+    <div>
+        <h2>유용한 정보</h2>
+        <ul>
+            <li>네이버</li>
+            <li>카카오다음</li>
+            <li><a href>구글</a></li>
+            <li>쿠팡</li>
+        </ul>    
+        <ul>
+            <li>바나나</li>
+            <li><a href>사과</a></li>
+            <li>배</li>
+            <li>수박</li>
+        </ul>
+        <hr>
+    </div>
+    <ul>
+        <li><a href>감사</a></li>
+        <li>안녕</li>
+        <li>반가워</li>
+    </ul>
+</body>
+</html>
