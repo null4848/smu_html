@@ -1,0 +1,39 @@
+<!-- 뷰포트 : 실제내용표시되는영역
+pc, 모바일 픽셀표시 방법이 달름. 모바일화면에서의도한대로표시X 
+-> 뷰포트지정하면알아서확대해쥼 
+반응형상태사이트만들때는 % pxㄴㄴ-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0px; padding: 0;}
+        div{border: 1px solid black; box-sizing: border-box;}
+        section{display: flex;}
+        .top{width: 100%; height: 200px; 
+            background: url(images/kim01.jpg) no-repeat;
+            background-size: cover;
+        }
+        .left{width: 80%; height: 500px; background: rgb(255, 214, 100);}
+        img{width: 100%;}
+        .right{width: 20%; height: 500px; background: rgb(123, 216, 123);}
+        .footer{width: 100%; height: 100px; background: rgb(228, 82, 24);}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="top">상단TOP 부분</div>
+        <section>
+            <div class="left">                
+                <img src="../h0415/images/nctwish.jpg" alt="">
+            </div>
+            <div class="right">오른쪽 부분</div>
+
+        </section>
+        <div class="footer">하단FOOTER 부분</div>
+    </div>
+    
+</body>
+</html>
