@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{border: 1px solid black; margin: 20px auto;
+            width: 600px; height: 200px;
+            font-size: 40px; text-align: center;
+            line-height: 200px;
+        }
+        button{width: 150px; height: 40px; text-align: center;
+                display: block; margin: 5px auto;}
+    </style>
+</head>
+<body>
+    <div id="txt"></div>
+    <button id="start">시간진행</button>
+    <button id="stop">시간멈춤</button>
+    <script>
+        getclock(); // 구동시 바로 실행
+
+        // 시간 진행 버튼 클릭시 시간이 진행 되도록 구현
+        document.querySelector("#start").onclick = start;
+        // 시간 멈춤
+        document.querySelector("#stop").onclick = stop;
+
+
+        function stop(){
+            clearInterval(timer);
+        }
+
+        function start(){
+            // setInteval - 일정한 시간 간격으로 
+            timer = setInterval(getclock,1000); // 함수호출, 1초마다
+        }
+
+
+        function getclock(){
+            let today = new Date;
+            var year = today.getFullYear();
+            var month = today.getMonth()+1;
+            var day = today.getDate();
+            var hour = today.getHours();
+            var minute = today.getMinutes();
+            var second = today.getSeconds();
+    
+            var screen = `${year}-${month<10?"0"+month:month}-${day} ${hour}:${minute}:${second}`
+            document.querySelector("#txt").innerText = screen
+
+        }
+    </script>
+    
+</body>
+</html>
