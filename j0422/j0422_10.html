@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{border: 1px solid black; border-collapse: collapse;}
+        th,td{width: 200px; height: 40px; text-align: center;}
+    </style>
+
+</head>
+
+<body>
+    <table>
+        <th>번호</th>
+        <tbody id="tbody">
+            <tr>
+                <td>1</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <script>
+        let data=""
+        for (let i=1;i<=10;i++){
+            data += `<tr>`;
+            data += `<td>${i}</td>`;
+            data += `<tr>`;
+        } 
+        document.querySelector("#tbody").innerHTML=data
+    </script>
+
+</body>
+</html>
