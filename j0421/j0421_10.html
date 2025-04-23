@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{text-align: center;}
+        *{margin: 0; padding: 0;}
+        table{margin: 0 auto; text-align: center;}
+        table,th,td{border: 1px solid black; border-collapse: collapse;}
+        th,td{width: 150px; height: 40px;}
+        th:nth-child(2){width: 300px;}
+    </style>
+</head>
+<body>
+    <h2>산술연산</h2>
+
+    <script>
+
+        function dataBtn(){
+            var hdata = ""
+            for(let i=0;i<1--; i++)
+            hdata+="<tr>"
+            hdata += "'<td>${i+1}</td>'" //빽키 사용 변수 사용 가능
+            hdata ="홈페이지를 오픈했습니다."
+            hdata ="<td>관리자</td>"
+            hdata ="<td>2025-04-01</td>."
+            hdata ="</tr>"
+    
+            document.querySelector("#tbody").innerText=hdata;
+            document.querySelector("#tbody").innerHtml=hdata;
+
+        }
+
+
+
+        /*
+        let num1 = 15;
+        let num2 = 2;
+        let result = 0;
+        result = num1+num2
+        document.write("더하기 : ",result,"<br>")
+        result = num1-num2
+        document.write("빼기 : ",result,"<br>")
+        result = num1*num2
+        document.write("곱하기 : ",result,"<br>")
+        result = num1/num2
+        document.write("나누기 : ",result,"<br>")
+        */
+
+        /*
+        let a = 10;    //typeof(a) -> number
+        let b = "10";  //typeof(b) -> string
+
+        result = a==b; // 자바스크립트 안에 있는 데이터를 가지고 비교
+        document.write(result,"<br>");
+        result2 = a===b; // 자바스크립트 안에 있는 데이터를 가지고 비교
+        document.write(result2,"<br>");
+        */
+
+        /*
+        let a ="a";
+        let b ="b";
+        result = a+b;
+        document.write(result,"<br>");
+        document.write(a-b,"<br>");
+        document.write(a*b,"<br>");
+        document.write(a/b,"<br>");
+        */
+    </script>
+
+    <h2>테이블</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>작성일</th>
+            </tr>
+
+    </thead>
+    <tbody id="tbody">
+        <tr>
+        </tr>
+
+    </tbody>
+
+    </table>
+    <button onclick="dataBtn()">데이터 불러오기</button>
+</body>
+</html>
