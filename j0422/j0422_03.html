@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+
+    <script>
+        /*
+            alert, prompt, confirm
+            console.log() document.write()
+            변수 선언 : var, let, const :상수
+            document. getElementById, getElemntByClassName, querySelector
+        */
+
+        let a = 30;
+        let b = 70;
+        let c = 50;
+        let result = a>b?(a>c?a:c):(b>c?b:c);
+        
+        function cal(){
+
+            let a1 = Number(document.querySelector("#a1").value);
+            let b1 = Number(document.querySelector("#a2").value);
+            let c1 = Number(document.querySelector("#a3").value);
+            console.log("a1 : ",a1,"b1 : ",b1,"c1 : ",c1)
+
+            let result1 = a1>b1?(a1>c1?a1:c1):(b1>c1?b1:c1);
+            console.log("result1 : ",result1)
+
+            alert("최대값 찾기 : "+result1);
+
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="a1"><br>
+    <input type="text" id="a2"><br>
+    <input type="text" id="a3"><br>
+    <button type="button" id="cal" onclick="cal()">최대값 검색</button>
+    
+</body>
+</html>
