@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let today = new Date(); // 날짜 객체 선언
+        today.getFullYear(); // 년도
+        today.getMonth(); // 월
+        today.getDate(); // 일
+        today.getDay(); // 요일
+        today.getHours(); // 시간
+        today.getMinutes(); // 분
+        today.getSeconds(); // 초 
+        today.getMilliseconds(); // 밀리초
+
+        document.write(today,"<br>");
+        document.write(today.getFullYear()+"-"+today.getMonth()+"-"+today.getDate()+"-"+today.getDay());
+        document.write("<br>");
+        
+        // 요일 출력
+        let week = ['일요일','월요일','화요일','수요일','목요일','금요일','토요일']
+        let day = today.getDay();
+        if (day==0) document.write("일요일","<br>");
+        else if (day==1) document.write("월요일","<br>");
+        else if (day==2) document.write("화요일","<br>");
+        else if (day==3) document.write("수요일","<br>");
+        else if (day==4) document.write("목요일","<br>");
+        else if (day==5) document.write("금요일","<br>");
+        else if (day==6) document.write("토요일","<br>");
+
+        document.write(week[today.getDay()],"<br>")
+    </script>
+    
+</body>
+</html>
