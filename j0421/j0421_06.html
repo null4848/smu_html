@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        div{width: 200px; height: 50px; border: 1px solid black;
+            text-align: center; line-height: 40px;}
+    </style>
+</head>
+<body>
+    <h2 id="bmi">BMI 계산하기</h2>
+
+    <label>신장</label>
+    <input type="text" name="height" id="height">
+    <label>cm</label>
+    <br>
+    <label>체중</label>
+    <input type="text" name="weight" id="weight">
+    <label>kg</label>
+    <br>
+    <button onclick="calBtn()">계산하기</button>
+    <div id="result">0</div>
+    <div id="result2">정상</div>
+    
+
+    <script>
+        function calBtn(){
+            alert("계산하기 실행");
+            // 걔산 수식
+            let cm = Number(document.querySelector("#height").value)
+            let kg = Number(document.querySelector("#weight").value)
+            let m = cm / 100
+            let bmi = kg / (m * m)
+            document.querySelector("#result").innerText=bmi
+ 
+            // 출력
+            console.log("키 : "+document.querySelector("#height").value);
+            console.log("몸무게 : "+document.querySelector("#weight").value);
+            console.log("결과값 : "+result); 
+
+            console.log("글자ㅏ : ",document.querySelector("#result").innerText);
+
+            if(result=30){
+                document.querySelector("result2").innerHTML = "고도비만"
+            }else if(result>=25){
+                document.querySelector("result2").innerHTML = "비만"
+            }else if(result>=23){
+                document.querySelector("result2").innerHTML = "과체중"
+            }else if(result>=18.5){
+                document.querySelector("result2").innerHTML = "정상"
+            }else{
+                document.querySelector("result2").innerHTML = "저체중"
+            }
+
+        }
+
+
+        /*
+        // 국어, 영어, 수하 점수를 입력받아 값을 출력하시오.
+       let kor = Number(prompt("국어점수를 입력하세요. "))
+       let eng = prompt("영어점수를 입력하세요. ")
+       let math = prompt("수학점수를 입력하세요. ")
+       // 콘솔창에 출력
+       // 합계, 평균 구하시오
+
+       // 타입변경
+       total = Number(kor)+Number(eng)+Number(math)
+       avg = total/3
+
+       console.log("합계 : ",total, "평균 : ",avg)
+       */
+
+       /* 체중, 키(cm) 입력받아, 체중(kg) ÷ {신장(m) × 신장(m)} 
+          결과값을 출력하시오.
+        입력 2개 - 체중, 키
+        키를 cm->m변경
+        ㄱㅖ산 수식이용해서 결과값을 출력하시오.
+       */
+       
+       /*
+       let cm = Number(prompt("키를 입력하세요."))
+       let kg = Number(prompt("체중을 입력하세요."))
+
+       let m = cm/100
+
+       let bmi = kg / (m * m)
+
+       console.log("키 : ",cm)
+       console.log("몸무게 : ", kg)
+       console.log("bmi 지수 : ",bmi)
+        */
+
+    </script>
+    
+</body>
+</html>
