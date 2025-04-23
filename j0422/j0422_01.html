@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{border: 1px solid black; width: 200px;
+            height: 40px; text-align: center;}
+    </style>
+    <script>
+        // 바로 실행
+        function cal(){
+            alert(" 바로 실행")
+            let kor = Number(document.querySelector("#kor").value);
+            let eng = Number(document.querySelector("#eng").value);
+            document.querySelector("#cal").innerText = kor+eng
+        }
+    </script>
+</head>
+<body>
+    <h2>회원가입</h2>
+    <label>국어</label>
+    <input type="text" name="kor" id="kor">
+    <br>
+    <label>영어</label>
+    <input type="text" name="eng" id="eng">
+    <br>
+    <button type="button" onclick="cal()">저장하기</button>
+    <h3>합계</h3>
+    <div id="cal">0</div>
+
+    
+</body>
+</html>
