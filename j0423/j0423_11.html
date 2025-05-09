@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 제이쿼리 최신버전 다운로드 -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>제이쿼리</title>
+    <script>
+        $(function(){
+            let num = 1;
+            $("#next").click(function(){
+                num++;
+                if(num>6) num=1
+                console.log("num : ",num);
+                $("#img").attr("src",`images/best0${num}.jpg`);
+            })
+            
+            $("#pre").click(function(){
+                num--;
+                if(num<1) num=6;
+                console.log("num : ",num);
+                $("#img").attr("src",`images/best0${num}.jpg`) ;           })
+            })
+    </script>
+    <style>
+        button{font-size: 30px;}
+    </style>
+</head>
+<body>
+    <div>
+        <img id="img" src="images/best01.jpg"><br>
+    </div>
+    <button id="pre"><i class="fa-solid fa-chevron-left"></i></i> </button>
+    <button id="next"><i class="fa-solid fa-chevron-right"></i></i> </button>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Document</title>
+    <script>
+        // value -> val()
+        // innerText -> text()
+        // innerHtml -> html() 기존 html은 모두 삭제 후 추가
+        // append(), prepend() 기존 html에 추가
+        
+        $(function(){
+            $("#cbtn").click(function(){
+                let hdata = ""
+                // alert("알림창")
+                hdata += `<ul>`
+                hdata += `<li>사과</li>`
+                hdata += `<li>수박</li>`
+                hdata += `<li>딸기</li>`
+                hdata += `</ul>`
+                $(".txt").prepend(hdata)
+            });
+
+            $("#chg").click(function(){
+                $("li").css({"font-size":"30px", "color":"red", "border":"1px solid black"})
+            })
+
+            $("li").click(function(){
+                console.log($(this).text())
+                $(this).css({"font-size":"30px","color":"red","border":"1px solid black"});
+            })
+
+            $("img").click(function(){
+                console.log($(this).attr("src"));
+                $(this).removeAttr("alt")
+            })
+
+        });
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="txt">
+        <ul>
+            <li>스위스</li>
+            <li>이탈리아</li>
+            <li>프랑스</li>
+        </ul>
+    </div>
+    <img src="images/best01.jpg">
+
+    <button id="cbtn">추가</button>
+    <button id="chg">변경</button>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <title>Document</title>
+        <style>
+            *{margin:0; padding: 0;}
+            #container{width:1200px; margin:30px auto; text-align: center;}
+            h2{font-size: 40px; margin-bottom:40px;}
+            table{width:1200px; margin:0 auto;}
+            table,th,td{border:1px solid black; border-collapse: collapse;}
+            th{height: 60px; background: #eee;}
+            td{height:50px;}
+            button{width:100px; height:35px;}
+            input:focus {outline: none;} /* 기본 focus형태를 제거 */
+            input:focus { border:2px solid red;}
+            input{margin-bottom: 5px;}
+            #input{margin-bottom: 30px;}
+            #input div{font-size: 30px; margin-bottom: 10px;}
+            #input input{width:500px; height:32px; padding-left: 20px;}
+        </style>
+        <script>
+            $(function(){
+
+                let no = 1;
+                let hdata = ``;
+
+                let suFlag = 0;
+                let updateNum = 0;
+
+
+                // 5개 게시글 
+                for(let i=1;i<=5;i++){
+                    hdata += `<tr id=${no}>`;
+                    hdata += `<td>${i}</td>`;
+                    hdata += `<td class="title">이벤트 신청</td>`;
+                    hdata += `<td>관리자</td>`;
+                    hdata += `<td>2025-04-24</td>`;
+                    hdata += `<td>100</td>`;
+                    hdata += `<td>`;
+                    hdata += `<button type="button" class="uBtn">수정</button>`;
+                    hdata += `<button type="button" class="dBtn">삭제</button>`;
+                    hdata += `</td>`;
+                    hdata += `</tr>`;
+                    no++;
+                }
+                $("#tbody").html(hdata);
+                
+                // 게시글 1개 추가
+                $(document).on("click","#save",function(){
+                    if(suFlag==0){
+                        // input에 있는 값 가져오기
+                        let title = $("#title").val();
+                        let id = $("#id").val();
+    
+                        // 기존 hdata 초기화        
+                        hdata = ``;
+                        hdata += `<tr id=${no}>`;
+                        hdata += `<td>${no}</td>`;
+                        hdata += `<td class="title">${title}</td>`;
+                        hdata += `<td>${id}</td>`;
+                        hdata += `<td>2025-04-24</td>`;
+                        hdata += `<td>100</td>`;
+                        hdata += `<td>`;
+                        hdata += `<button type="button" class="uBtn">수정</button>`;
+                        hdata += `<button type="button" class="dBtn">삭제</button>`;
+                        hdata += `</td>`;
+                        hdata += `</tr>`;
+                        no++;
+    
+                        $("#tbody").prepend(hdata);
+                        alert("게시글이 추가 되었습니다.")
+                        //input 초기화
+                        $("#title").val("")
+                        $("#id").val("")
+                    } else{
+                        let title = $("#title").val();
+                        let id = $("#id").val();
+    
+                        // 기존 hdata 초기화        
+                        hdata = ``;
+                        hdata += `<tr id=${no}>`;
+                        hdata += `<td>${updateNum}</td>`;
+                        hdata += `<td class="title">${title}</td>`;
+                        hdata += `<td>${id}</td>`;
+                        hdata += `<td>2025-04-24</td>`;
+                        hdata += `<td>100</td>ㄴ`;
+                        hdata += `<td>`;
+                        hdata += `<button type="button" class="uBtn">수정</button>`;
+                        hdata += `<button type="button" class="dBtn">삭제</button>`;
+                        hdata += `</td>`;
+                        hdata += `</tr>`;
+                        no++;
+    
+                        $(`#${updateNum}`).html(hdata)
+                        alert("게시글이 수정 되었습니다.")
+                        //input 초기화
+                        $("#title").val("")
+                        $("#id").val("")
+                        $("#save").text("저장");
+                        suFlag = 0;
+    
+
+                    }
+
+                })
+
+                //게시글 삭제 - 정적이벤트
+                //$(".dBtn").click(function(){
+                //  alert("삭제");
+                //});
+
+                //게시글 삭제 - 동적이벤트
+                $(document).on("click",".dBtn",function(){
+                    let num = $(this).closest("tr").attr("id");
+                    if(confirm(`${num}번 게시글을 삭제하시겠습니까?`)){
+                        $(`#${num}`).remove();
+                    }
+                });
+                
+                $(document).on("click",".uBtn",function(){
+                    updateNum = $(this).closest("tr").attr("id");
+                    if(confirm("게시글을 수정하시겠습니까?")){
+                        $("#title").val($(this).closest("tr").children()[1].innerText)
+                        $("#id").val($(this).closest("tr").children()[2].innerText)
+                        $("#save").text("수정 저장")
+
+                        suFlag = 1;
+                    }
+                })
+            
+            });//jquery
+        </script>
+    </head>
+    <body>
+        <div id="container">
+            <h2>게시판</h2>
+            <div id="input">
+                <div>글을 입력하세요.</div>
+                <input type="text" name="title" id="title" placeholder="제목을 입력하세요"><br>
+                <input type="text" name="title" id="id" placeholder="작성자를 입력하세요"><br>
+                <button type="button" id="save">저장</button>
+            </div>
+    
+        <table>
+            <colgroup>
+                <col width="10%">
+                <col width="*">
+                <col width="12%">
+                <col width="12%">
+                <col width="12%">
+                <col width="20%">
+            </colgroup>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>작성일</th>
+                <th>조회수</th>
+                <th>기타</th>
+            </tr>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+    </div>
+
+</div>    
+</body>
+</html>
